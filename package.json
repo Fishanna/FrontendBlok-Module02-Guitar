@@ -1,6 +1,6 @@
 {
   "name": "frontendblok-module02-guitar",
-  "homepage": "https://fishanna.github.io/FrontendBlok-Module02-Guitar",
+  
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve --env develop"
