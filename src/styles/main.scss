@@ -117,10 +117,51 @@ a {
       flex-basis: calc(39% - 50px);
     }
     &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      height: 151px;
       border: 1px solid $light; 
       border-right: none;
       border-radius: 20px 0 0 20px;
+      position: relative;
+      margin-right: 80px;
+      padding: 30px;
+      box-sizing:border-box;
+      & + & {
+        margin-top: 19px;
+      }
+    &::after {
+        content: '';
+        width: 80px;
+        height: 151px;
+        background-image: url(../images/banner-info-decor.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: -80px;
+        top: 0;
+      }
     }
+
+    &__text {
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 110%;
+      span {
+        display: block;
+        font-size: 32px;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+    }
+            
+    &__decor {
+      position: absolute;
+      top: 0;
+      right: - 80px; 
+    }
+   
     &__title {
     font-size: 64px;
     font-weight: 700;
