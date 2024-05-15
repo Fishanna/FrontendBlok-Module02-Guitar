@@ -130,15 +130,20 @@ a {
       padding: 30px;
       box-sizing: border-box;
       transition: $tr;
+      z-index: 1;
       &:hover {
-        background-color: $accent;
-        border-color: $accent;
-        &::after {
+        &::before {
+          width: 100%;
+          transform: translateX(0) scale(1);
           opacity: 1;
-        }
-        .banner-decor {
+         }
+          .banner__decor {
           background-color: $accent;
           border-color: $accent;
+          &::after {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+          }
         }
       }
       & + & {
@@ -146,31 +151,22 @@ a {
       }
       &::before {
         content: '';
-        width: 80px;
+        display: block;
+        width: 0;
         height: 151px;
-        background-image: url(../images/banner-info-decor.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
+        background-color: $accent;
+        border: 1px solid $accent;
         position: absolute;
-        right: -80px;
-        top: 0;
-      }
-      &::after {
-        content: '';
-        width: 80px;
-        height: 151px;
-        background-image: url(../images/banner-info-decor-hover.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        right: -80px;
-        top: 0;
+        top: -1px;
+        right: 0;
+        border-radius: 20px 0 0 20px;
+        z-index: -1;
         opacity: 0;
+        transform: translateX(50%) scale(0);
         transition: $tr;
-      } 
-    }
-  
-    &__text {
+      }
+  }
+      &__text {
       font-size: 24px;
       font-weight: 200;
       line-height: 110%;
@@ -182,14 +178,41 @@ a {
         margin-top: 20px;
       }
     }
-            
-    &__decor {
+      &__decor {
+      display: flex;  
       position: absolute;
       top: 0;
-      right: - 80px; 
+      right: -80px; 
       transition: $tr;
+      border: 1px solid $light;
+      border-radius: 10px;
+
+        &::before {
+        content: '';
+        width: 80px;
+        height: 151px;
+        background-image: url(../images/banner-info-decor.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        top: -1px;
+      }
+      &::after {
+        content: '';
+        width: 80px;
+        height: 151px;
+        transform: translate(-51%, 0) scale(0);
+        background-image: url(../images/banner-info-decor-hover.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: -1px;
+        opacity: 0;
+        right: 0;
+        transition: $tr;
+      } 
     }
-   
     &__title {
     font-size: 64px;
     font-weight: 700;
@@ -212,6 +235,8 @@ a {
     padding: 30px;
     transition: $tr;
     cursor: pointer;
+    margin-top: 19px;
+   
     @media(hover: hover) {
         &:hover {
     background-color: transparent;
@@ -248,5 +273,6 @@ a {
           right: -20px;
      }
   }
+  
 }
   }
