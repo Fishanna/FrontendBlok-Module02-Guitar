@@ -443,3 +443,63 @@ a {
     }
    }
 }
+.course__schedule {
+  margin-top: 50px;
+}
+.accordion {
+  &__btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32px;
+    color: $accent;
+    font-weight: 400;
+    background-color: $light;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 25px 20px 30px;
+    margin-bottom: 24px;
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url(../images/UI/Remove.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &.active {
+      &::after {
+        background-image: url(../images/UI/plus.svg);  
+      }
+    }
+  }
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: $light;
+    border-radius: 20px;
+  }
+  
+  &__list {
+    list-style-type: none;
+    padding-left: 0;
+    padding: 30px 50px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 300;
+    color: $dark;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    &::before {
+      content: '-';
+    }
+  }
+}
