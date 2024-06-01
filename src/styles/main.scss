@@ -111,6 +111,7 @@ a {
     padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
+    padding-bottom: 30px;
 
   }
   .banner {
@@ -118,7 +119,7 @@ a {
     background-image: url(../images/bg-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 50px;
+    border-radius: $br-max;
     padding: 100px 50px;
     margin-top: 135px;
     gap: 50px;
@@ -245,13 +246,11 @@ a {
     text-transform: uppercase;
     background-color: $accent;
     border: 1px solid $accent;
-    border-radius: 20px;
+    border-radius: $br-min;
     padding: 30px;
     transition: $tr;
     cursor: pointer;
-    margin-top: 180px;
-   
-    @media(hover: hover) {
+        @media(hover: hover) {
         &:hover {
     background-color: transparent;
       }
@@ -260,7 +259,7 @@ a {
   
 .banner-box {
   border: 1px solid $light;
-  border-radius: 20px;
+  border-radius: $br-min;
   padding: 30px 332px 30px 30px;
   position: relative;
  &__title {
@@ -303,7 +302,7 @@ a {
     font-weight: 200;
     padding: 10px 20px;
     border: 1px solid $gray;
-    border-radius: 50px;
+    border-radius: $br-max;
     position: relative;
     &::before {
       content: '';
@@ -391,7 +390,7 @@ a {
     height: 707px;
     background-color: $dark;
     border: 1px solid $dark;
-    border-radius: 50px;
+    border-radius: $br-max;
     position: relative;
     overflow: hidden;
     transition: $tr;
@@ -457,7 +456,7 @@ a {
     font-weight: 400;
     background-color: $light;
     border: none;
-    border-radius: 20px;
+    border-radius: $br-min;
     padding: 20px 25px 20px 30px;
     margin-bottom: 24px;
     &::after {
@@ -480,7 +479,7 @@ a {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: $light;
-    border-radius: 20px;
+    border-radius: $br-min;
   }
   
   &__list {
@@ -503,3 +502,34 @@ a {
     }
   }
 }
+
+.steps {
+  border: 1px solid $light;
+  border-radius: $br-max;
+  background: linear-gradient(180deg, #1f2023 0%, #7027e2 50%, #1f2023 100%);
+  padding-top: 150px;
+  padding-bottom: 150px;
+  max-width: 1920px; 
+  margin: 0 auto;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  &__item {
+    background-color: $light;
+    border-radius: $br-max;
+    padding: 30px 28px 30px 30px;
+  }
+  &__text {
+    color: $dark;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    letter-spacing: -0.005em;
+   
+  }
+}
+
