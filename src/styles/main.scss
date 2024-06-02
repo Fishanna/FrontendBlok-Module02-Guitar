@@ -510,7 +510,8 @@ a {
   padding-top: 150px;
   padding-bottom: 150px;
   max-width: 1920px; 
-  margin: 0 auto;
+  margin: 100px auto;
+  
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -529,7 +530,69 @@ a {
     margin-top: 20px;
     margin-bottom: 0;
     letter-spacing: -0.005em;
-   
-  }
+    }
 }
 
+.result {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  &__item {
+    background-color: $light;
+    padding: 30px;
+    border-radius: $br-min;
+    &._subgrid {
+      grid-column: 2 / 5;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: 130px;
+      align-items: center;
+    }
+  }
+  &__text {
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 0;
+    span {
+      width: fit-content;
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 110%;
+      background-color: $accent;
+      padding: 10px;
+      border-radius: 10px;
+     }
+  }
+  &__btn {
+    grid-column: 2 / 4;
+    align-self: stretch;
+    color: $light;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    background-color: $accent;
+    border: 1px solid $accent;
+    border-radius: $br-min;
+    padding: 30px;
+    transition: $tr;
+    cursor: pointer;
+        @media(hover: hover) {
+        &:hover {
+          color: $accent;
+          background-color: transparent;
+      }
+  }
+}
+}
